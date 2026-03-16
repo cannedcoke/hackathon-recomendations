@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const controller = require("../controllers/loginController");
+const controller = require("../controllers/loginController");
 // const controller = require("../controllers/mainPage");
 // const controller = require("../controllers/signInController");
 // const controller = require("../controllers/userFormController");
@@ -10,7 +10,7 @@ const router = express.Router();
 
 
 // hacer rutas para 
-// router.get("/", controller.showData);
+router.post("/login", controller.login);
 // router.post("/add", controller.addRecord);
 // router.post("/vote",controller.addVote)
 // router.delete("/unVote",controller.removeVote)

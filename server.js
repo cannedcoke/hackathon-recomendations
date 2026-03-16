@@ -51,7 +51,6 @@ const recordRoutes = require("./routes/router");
 
 
 
-// ruta principal
 
 // cuando alguien entra a "/", se ejecuta esta función
 app.get("/", (req, res) => {
