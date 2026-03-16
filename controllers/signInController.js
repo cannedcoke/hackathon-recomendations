@@ -26,8 +26,9 @@ exports.signIn = (req, res) => {
     // si el usuario no existe lo creamos en la base de datos
     const nuevoUsuario = model.crearUsuario(email, password);
 
-    // enviamos respuesta exitosa
-    res.render("index")
+    // después de crear el usuario lo mandamos al formulario userForms
+    // le pasamos también el usuario por si la vista necesita usar sus datos
+    res.render("userForms", { user: nuevoUsuario });
 
 };
 
