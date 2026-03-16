@@ -1,0 +1,82 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#180575;
+  font-family: Arial, sans-serif;
+}
+
+/* cuadro del login */
+main{
+  background:#ffffff;
+  padding:40px;
+  width:320px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* título */
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#180575;
+  font-size:28px;
+  font-weight:700;
+}
+
+/* formulario */
+form{
+  display:flex;
+  flex-direction:column;
+}
+
+/* etiquetas */
+label{
+  margin-top:10px;
+  margin-bottom:5px;
+  font-size:15px;
+  font-weight:600;
+  color:#180575;
+}
+
+/* inputs */
+input{
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
+  font-weight:500;
+  font-family:sans-serif;
+  box-shadow:0 3px 8px rgba(0,0,0,0.15); /* sombreado del campo */
+}
+
+/* efecto cuando escribes */
+input:focus{
+  outline:none;
+  border-color:#180575;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* botón */
+button{
+  margin-top:20px;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:#180575;
+  color:#ffffff;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  align-self:center; /* centra el botón */
+  width:150px;
+  transition:0.3s;
+}
+
+/* hover botón */
+button:hover{
+  background:#3355ffc3;
+}
+
