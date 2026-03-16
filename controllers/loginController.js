@@ -45,15 +45,15 @@ exports.login = (req, res) => {
         });
     }
 
-
-    // si todo es correcto enviamos respuesta positiva
-    res.render("mainPage",{user:user});
-
-};
-
+    // si el usuario ya tiene actor favorito y película favorita
+    if (user.actor_favorito && user.pelicula_favorita) {
+        return res.render("mainPage", { user: user });
+    // si todavía no completó esos datos lo mandamos a userForms
+    }else {
+        res.render("userForms", { user: user });
+    };
 
 
 // exportamos las funciones para que las rutas puedan usarlas
-module.exports = {
-    login
 };
+module.exports = {login};
