@@ -18,14 +18,17 @@ exports.userForms = (req, res) => {
     }
 
     // guardamos el actor favorito y la película favorita
-    const preferencias = model.actualizarPreferenciasUsuario(
+    model.actualizarPreferenciasUsuario(
         email,
         actor,
         pelicula
     );
 
-    // después de guardar los datos lo mandamos a la página principal
-    res.render("mainPage", { user: preferencias });
+    // después de guardar los datos enviamos al frontend
+    // la ruta a la que debe redirigir
+    return res.json({
+        redirect: "/mainPage"
+    });
 
 };
 

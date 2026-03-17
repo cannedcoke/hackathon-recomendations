@@ -55,5 +55,5 @@ exports.login = (req, res) => {
 
 
 // exportamos las funciones para que las rutas puedan usarlas
-};
+}
 module.exports = {login};
