@@ -1,6 +1,6 @@
 // El controlador necesita acceder a las funciones de la base de datos
 // para poder buscar o crear usuarios
-const model = require("../models/database");
+const model = require("../models/model");
 
 
 // Función que procesa el registro cuando el usuario envía el formulario
@@ -24,16 +24,12 @@ exports.signIn = (req, res) => {
     }
 
     // si el usuario no existe lo creamos en la base de datos
-    const nuevoUsuario = model.crearUsuario(email, password);
+    model.crearUsuario(email, password);
 
     // después de crear el usuario lo mandamos al formulario userForms
     // le pasamos también el usuario por si la vista necesita usar sus datos
-    res.render("userForms", { user: nuevoUsuario });
+    return res.json({ redirect: `/userForm?email=${email}` });
 
 };
 
 
-// exportamos la función para usarla en las rutas
-module.exports = {
-    signIn
-};
