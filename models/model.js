@@ -94,9 +94,25 @@ function actualizarPreferenciasUsuario(email, actor, pelicula) {
   db.close();
   return { actorAgregado, peliculaAgregada };
 }
+// ─── obtenerTodosLosActores ──────────────────────────────────────────────────
+function obtenerTodosLosActores() {
+  const db = conectar();
+  const actores = db.prepare("SELECT * FROM Actor").all();
+  db.close();
+  return actores;
+}
 
+// ─── obtenerTodasLasPeliculas ────────────────────────────────────────────────
+function obtenerTodasLasPeliculas() {
+  const db = conectar();
+  const peliculas = db.prepare("SELECT * FROM Movie").all();
+  db.close();
+  return peliculas;
+}
 module.exports = {
   encontrarUsuarioPorEmail,
   crearUsuario,
   actualizarPreferenciasUsuario,
+  obtenerTodosLosActores,
+  obtenerTodasLasPeliculas,
 };
