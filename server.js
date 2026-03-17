@@ -25,7 +25,13 @@ app.set("view engine", "hbs");
 // define la carpeta donde estarán los archivos de vistas
 app.set("views", path.join(__dirname, "views"));
 
+const session = require("express-session");
 
+app.use(session({
+    secret: "alguna-clave-secreta",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 // MIDDLEWARES
 

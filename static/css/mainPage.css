@@ -123,6 +123,10 @@ input[type="password"]:focus {
 }
 
 /* ── Mood grid ── */
+.hidden {
+  display: none;
+}
+
 .mood-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
