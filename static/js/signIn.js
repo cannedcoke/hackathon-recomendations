@@ -2,7 +2,7 @@ const UserData = document.getElementById("userData")
 UserData.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("nombre").value
+    const email = document.getElementById("email").value
     const password = document.getElementById("password").value
 
     const response = await fetch("/signIn",{
@@ -19,6 +19,7 @@ UserData.addEventListener("submit", async (e) => {
 
         // Si el servidor respondió bien, recargar a la URL que devolvió
     const data = await response.json();
+    console.log("redirect:", data.redirect);
     window.location.href = data.redirect;
 
 })

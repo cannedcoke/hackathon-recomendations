@@ -19,5 +19,7 @@ UserData.addEventListener("submit", async (e) => {
 
     // Si el servidor respondió bien, recargar a la URL que devolvió
     const data = await response.json();
+    console.log(data);
+    debugger;
     window.location.href = data.redirect;
 });
