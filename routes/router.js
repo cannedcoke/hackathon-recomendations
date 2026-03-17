@@ -14,6 +14,7 @@ const userFormController = require("../controllers/userFormController");
 // hacer rutas para 
 router.post("/login", LoginController.login);
 router.post("/signIn", SignInController.signIn);
+router.get("/signIn", (req, res) => res.render("signIn"));
 // router.post("/recommendations", mainPageController.ponerFuncion aca);
 
 router.post("/userForm", (req, res, next) => {
