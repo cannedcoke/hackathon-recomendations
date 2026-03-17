@@ -5,8 +5,8 @@
 // Entonces lo importamos para poder usar sus funciones
 
 // En otras palabras Trae el archivo donde están las funciones que buscan usuarios
-
-const model = require("../models/database");
+const bcrypt = require("bcrypt");
+const model = require("../models/model");
 
 
 
@@ -38,22 +38,18 @@ exports.login = (req, res) => {
 
 
     // si la contraseña no coincide con la guardada
-    if (user.password !== password) {
+    const passwordCorrecta = bcrypt.compareSync(password, user.password_hash);
+    if (!passwordCorrecta) {
+        return res.status(401).json({ message: "Contraseña incorrecta" });
+    }
 
-        return res.status(401).json({
-            message: "Contraseña incorrecta"
-        });
+    // si el usuario ya tiene actor favorito y película favorita
+    if (user.actor_favorito && user.pelicula_favorita) {
+        return res.json({ redirect: "/mainPage" });
+    } else {
+        return res.json({ redirect: `/userForm?email=${email}` });
     }
 
 
-    // si todo es correcto enviamos respuesta positiva
-    res.render("mainPage",{user:user});
-
-};
-
-
-
 // exportamos las funciones para que las rutas puedan usarlas
-module.exports = {
-    login
 };
