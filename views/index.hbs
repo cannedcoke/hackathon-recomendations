@@ -3,13 +3,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
 
-    <main>
-      <h2>LOGIN</h2>
+      <div class="navbar">
+        <div class="app-name">Mood<span>Vie</span></div>
 
+      </div>
+    <main>
+        <h2>Login</h2>
       <form id="loginForm">
 
         <label>Email</label>
@@ -38,6 +42,22 @@
       </form>
 
     </main>
+    <script>
+  const colors = ['#f5c800','#7b9fff','#e8568a','#8b5cf6','#ffffff'];
+  for (let i = 0; i < 80; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*6+4}s;
+      animation-delay:${Math.random()*2}s;
+    `;
+    document.body.appendChild(p);
+  }
+</script>
     <script src="/js/index.js"></script>
   </body>
 </html>
