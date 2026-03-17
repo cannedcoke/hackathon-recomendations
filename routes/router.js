@@ -4,9 +4,12 @@ const model = require("../models/model");
 const LoginController = require("../controllers/loginController");
 const SignInController = require("../controllers/signInController");
 const userFormController = require("../controllers/userFormController");
+const mainPageController = require("../controllers/mainPageController");
 // const mainPageController = require("../controllers/mainPageController");
 
 
+router.get("/mainPage", mainPageController.getMainPage);
+router.post("/recommendations", mainPageController.postRecommendations);
 
 // defino api endpoints y le indico que funcion del controlador usar
 
