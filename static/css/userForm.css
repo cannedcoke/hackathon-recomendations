@@ -1,0 +1,134 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand:  #180575;
+  --white:  #ffffff;
+}
+
+/* ── Body ── */
+body {
+  min-height: 100vh;
+  background-color: #180575;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(51, 85, 255, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(51, 85, 255, 0.18) 0%, transparent 45%);
+  font-family: 'DM Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px 64px;
+  gap: 40px;
+}
+
+/* ── Greeting ── */
+.greeting {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.greeting .app-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
+}
+
+.greeting .app-name span { color: #7b9fff; }
+
+.greeting .welcome {
+  margin-top: 6px;
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+/* ── Main card ── */
+main {
+  background: var(--white);
+  padding: 40px;
+  width: 340px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--brand);
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* ── Selects ── */
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23180575' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Button ── */
+button {
+  margin-top: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  align-self: center;
+  width: 200px;
+  transition: background 0.7s ease, transform 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  main { width: 100%; padding: 28px 20px; }
+}

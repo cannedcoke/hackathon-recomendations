@@ -21,23 +21,13 @@ exports.signIn = (req, res) => {
         });
     }
 
-    // encriptamos la contraseña antes de guardarla
-    // bcrypt.hashSync genera un hash seguro de la contraseña
-    const password_hash = bcrypt.hashSync(password, 10);
+    // si el usuario no existe lo creamos en la base de datos
+    model.crearUsuario(email, password);
 
-    // creamos el usuario en la base de datos
-    model.crearUsuario(email, password_hash);
-
-    // después de registrarse enviamos al frontend la ruta
-    // para que redirija al formulario de preferencias
-    return res.json({
-        redirect: "/userForm"
-    });
+    // después de crear el usuario lo mandamos al formulario userForms
+    // le pasamos también el usuario por si la vista necesita usar sus datos
+    return res.json({ redirect: `/userForm?email=${email}` });
 
 };
 
 
-// exportamos la función para que las rutas puedan usarla
-module.exports = {
-    signIn
-};

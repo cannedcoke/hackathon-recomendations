@@ -47,7 +47,7 @@ exports.login = (req, res) => {
     if (user.actor_favorito && user.pelicula_favorita) {
         return res.json({ redirect: "/mainPage" });
     } else {
-        return res.json({ redirect: "/userForm" });
+        return res.json({ redirect: `/userForm?email=${email}` });
     }
 
 

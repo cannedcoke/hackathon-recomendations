@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodFlick – Tus preferencias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/userForm.css" />
+</head>
+<body>
+
+  <div class="greeting">
+    <div class="app-name">Mood<span>Flick</span></div>
+    <p class="welcome">¡Ya casi! Contanos un poco más sobre vos.</p>
+  </div>
+
+  <main>
+    <h2>Tus preferencias</h2>
+
+    <form id="userFormForm">
+
+      <!-- email del usuario loggeado, pasado por el controlador -->
+      <input type="hidden" id="email" value="{{user.email}}" />
+
+      <label for="actor">Actor favorito</label>
+      <select id="actor">
+        <option value="" disabled selected>Elegí un actor</option>
+        {{#each actors}}
+          <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+
+      <label for="movie">Película favorita</label>
+      <select id="movie">
+        <option value="" disabled selected>Elegí una película</option>
+        {{#each movies}}
+          <option value="{{this.title}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+
+      <button type="submit">Guardar y continuar 🎬</button>
+
+    </form>
+  </main>
+
+  <script src="/js/userForm.js"></script>
+</body>
+</html>

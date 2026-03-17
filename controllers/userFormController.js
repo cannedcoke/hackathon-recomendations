@@ -1,5 +1,6 @@
 // Importamos el modelo para acceder a la base de datos
-const model = require("../models/database");
+console.log("userFormController cargado");
+const model = require("../models/model");
 
 // Función que procesa el formulario de preferencias del usuario
 exports.userForms = (req, res) => {
@@ -18,17 +19,13 @@ exports.userForms = (req, res) => {
     }
 
     // guardamos el actor favorito y la película favorita
-    const preferencias = model.actualizarPreferenciasUsuario(
+    model.actualizarPreferenciasUsuario(
         email,
         actor,
         pelicula
     );
 
     // después de guardar los datos lo mandamos a la página principal
-    res.render("mainPage", { user: preferencias });
+    return res.json({ redirect: "/mainPage" });
 
-};
-
-module.exports = {
-    userForms
 };
