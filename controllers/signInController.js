@@ -1,19 +1,17 @@
-// El controlador necesita acceder a las funciones de la base de datos
-// para poder buscar o crear usuarios
-const model = require("../models/database");
+// Importamos bcrypt para encriptar la contraseña antes de guardarla
+const bcrypt = require("bcrypt");
+
+// Importamos el modelo que contiene las funciones de la base de datos
+const model = require("../models/model");
 
 
 // Función que procesa el registro cuando el usuario envía el formulario
-// El usuario escribe:
-// email
-// contraseña
-// y presiona registrarse
 exports.signIn = (req, res) => {
 
-    // req.body contiene los datos enviados desde el frontend
+    // usamos destructuring para obtener email y password
     const { email, password } = req.body;
 
-    // verificamos si ya existe un usuario con ese email
+    // buscamos si ya existe un usuario con ese email
     const usuarioExistente = model.encontrarUsuarioPorEmail(email);
 
     // si el usuario ya existe devolvemos un error
@@ -23,17 +21,23 @@ exports.signIn = (req, res) => {
         });
     }
 
-    // si el usuario no existe lo creamos en la base de datos
-    const nuevoUsuario = model.crearUsuario(email, password);
+    // encriptamos la contraseña antes de guardarla
+    // bcrypt.hashSync genera un hash seguro de la contraseña
+    const password_hash = bcrypt.hashSync(password, 10);
 
-    // después de crear el usuario lo mandamos al formulario userForms
-    // le pasamos también el usuario por si la vista necesita usar sus datos
-    res.render("userForms", { user: nuevoUsuario });
+    // creamos el usuario en la base de datos
+    model.crearUsuario(email, password_hash);
+
+    // después de registrarse enviamos al frontend la ruta
+    // para que redirija al formulario de preferencias
+    return res.json({
+        redirect: "/userForm"
+    });
 
 };
 
 
-// exportamos la función para usarla en las rutas
+// exportamos la función para que las rutas puedan usarla
 module.exports = {
     signIn
 };
