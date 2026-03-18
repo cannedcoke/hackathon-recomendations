@@ -43,6 +43,7 @@ app.use(express.json());
 // sirve archivos estáticos desde la carpeta /js cuando alguien accede a /js en la URL
 app.use("/css", express.static(path.join(__dirname, "static/css")));
 app.use("/js",  express.static(path.join(__dirname, "static/js")));
+app.use("/img", express.static(path.join(__dirname, "static/img")));
 // __dirname = carpeta actual del archivo
 // path.join une rutas correctamente según el sistema operativo
 

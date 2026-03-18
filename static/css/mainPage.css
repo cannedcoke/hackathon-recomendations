@@ -127,7 +127,13 @@ input[type="password"]:focus {
   animation: drift linear infinite;
   opacity: 0;
 }
-
+.mood-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
 @keyframes drift {
   0%   { transform: translateY(100vh) rotate(0deg);   opacity: 0; }
   10%  { opacity: 1; }
