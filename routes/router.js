@@ -16,13 +16,9 @@ router.post("/logout", mainPageController.logout);
 
 
 // hacer rutas para 
-
-router.get("/login", (req, res) => res.render("login"))
 router.post("/login", LoginController.login);
-
-router.get("/signIn", (req, res) => res.render("signIn"));
 router.post("/signIn", SignInController.signIn);
-
+router.get("/signIn", (req, res) => res.render("signIn"));
 // router.post("/recommendations", mainPageController.ponerFuncion aca);
 
 router.post("/userForm", (req, res, next) => {
@@ -38,5 +34,6 @@ router.get("/userForm", (req, res) => {
     console.log("user:", user);
     res.render("userForm", { user, actors, movies });
 });
+router.get("/mainPage", (req, res) => res.render("mainPage"));
 
 module.exports = router;
