@@ -10,6 +10,7 @@ const mainPageController = require("../controllers/mainPageController");
 
 router.get("/mainPage", mainPageController.getMainPage);
 router.post("/recommendations", mainPageController.postRecommendations);
+router.post("/logout", mainPageController.logout);
 
 // defino api endpoints y le indico que funcion del controlador usar
 

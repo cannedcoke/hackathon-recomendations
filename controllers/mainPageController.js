@@ -81,3 +81,16 @@ exports.postRecommendations = (req, res) => {
     return res.status(500).json({ message: 'Ocurrió un error al buscar recomendaciones.' });
   }
 };
+
+//LOGOUT 
+exports.logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("logout error:", err);
+      return res.status(500).send("No se pudo cerrar sesión.");
+    }
+
+    res.clearCookie("connect.sid");
+    return res.redirect("/login");
+  });
+};
