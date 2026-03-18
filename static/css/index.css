@@ -6,8 +6,6 @@ body{
   align-items:center;
   background: linear-gradient(to bottom, #180575 40%, #3a2bbf 60%, #ffffff);
   font-family:arial, sans-serif;
-<<<<<<< HEAD
-=======
 }
 
 /* cuadro del login /
@@ -103,7 +101,6 @@ button:hover{
   align-items:center;
   background: linear-gradient(to bottom, #180575 40%, #3a2bbf 60%, #ffffff);
   font-family:arial, sans-serif;
->>>>>>> ba723815f952fbecabb0f3ed6c68461393f1a28f
 }
 
 /* cuadro del login */
@@ -126,11 +123,7 @@ h2{
   text-align:center;
   margin-bottom:20px;
   color:#ffffff;
-<<<<<<< HEAD
-  font-size:28px;
-=======
   font-size:30px;
->>>>>>> ba723815f952fbecabb0f3ed6c68461393f1a28f
   font-weight:700;
 }
 
@@ -211,8 +204,6 @@ button:hover{
   color:#ffffff;
   border-bottom: 1px solid #ffffff;
 }
-<<<<<<< HEAD
-=======
 .signup-text a{
   color: #ffffff;
   font-weight:700;
@@ -225,4 +216,3 @@ button:hover{
   color:#ffffff;
   border-bottom: 1px solid #ffffff;
 }
->>>>>>> ba723815f952fbecabb0f3ed6c68461393f1a28f
