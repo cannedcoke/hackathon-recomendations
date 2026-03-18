@@ -1,0 +1,42 @@
+const express = require("express");
+const router = express.Router();
+const model = require("../models/model");
+const LoginController = require("../controllers/loginController");
+const SignInController = require("../controllers/signInController");
+const userFormController = require("../controllers/userFormController");
+const mainPageController = require("../controllers/mainPageController");
+// const mainPageController = require("../controllers/mainPageController");
+
+
+router.get("/mainPage", mainPageController.getMainPage);
+router.post("/recommendations", mainPageController.postRecommendations);
+router.post("/logout", mainPageController.logout);
+
+// defino api endpoints y le indico que funcion del controlador usar
+
+
+// hacer rutas para 
+
+router.get("/login", (req, res) => res.render("login"))
+router.post("/login", LoginController.login);
+
+router.get("/signIn", (req, res) => res.render("signIn"));
+router.post("/signIn", SignInController.signIn);
+
+// router.post("/recommendations", mainPageController.ponerFuncion aca);
+
+router.post("/userForm", (req, res, next) => {
+    console.log("POST /userForm recibido");
+    next();
+
+}, userFormController.userForms);
+router.get("/userForm", (req, res) => {
+    console.log("query:", req.query);
+    const actors = model.obtenerTodosLosActores();
+    const movies = model.obtenerTodasLasPeliculas();
+    const user   = model.encontrarUsuarioPorEmail(req.query.email);
+    console.log("user:", user);
+    res.render("userForm", { user, actors, movies });
+});
+
+module.exports = router;
