@@ -36,15 +36,14 @@ exports.login = (req, res) => {
         });
     }
 
-
     // si la contraseña no coincide con la guardada
     const passwordCorrecta = bcrypt.compareSync(password, user.password_hash);
     if (!passwordCorrecta) {
         return res.status(401).json({ message: "Contraseña incorrecta" });
     }
-
+    req.session.userId = user.id;
     // si el usuario ya tiene actor favorito y película favorita
-    if (user.actor_favorito && user.pelicula_favorita) {
+    if (model.usuarioTienePreferencias(user.id)) {
         return res.json({ redirect: "/mainPage" });
     } else {
         return res.json({ redirect: `/userForm?email=${email}` });
