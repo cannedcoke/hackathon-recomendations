@@ -1,16 +1,25 @@
-const UserData = document.getElementById("userData")
+const UserData = document.getElementById("loginForm")
 UserData.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("nombre").value
+    const email = document.getElementById("email").value
     const password = document.getElementById("password").value
 
-    await fetch("/login",{
-        method:"POST",
+    const response = await fetch("/login", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
+    });
 
-    })
-    location.reload();
+    if (!response.ok) {
+        const data = await response.json();
+        alert(data.message);
+        return;
+    }
 
-})
+    // Si el servidor respondió bien, recargar a la URL que devolvió
+    const data = await response.json();
+    console.log(data);
+    debugger;
+    window.location.href = data.redirect;
+});
