@@ -19,6 +19,7 @@ router.post("/logout", mainPageController.logout);
 router.post("/login", LoginController.login);
 router.post("/signIn", SignInController.signIn);
 router.get("/signIn", (req, res) => res.render("signIn"));
+router.get("/login", (req, res) => res.render("index"));
 // router.post("/recommendations", mainPageController.ponerFuncion aca);
 
 router.post("/userForm", (req, res, next) => {

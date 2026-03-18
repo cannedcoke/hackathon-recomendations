@@ -126,7 +126,6 @@ function renderRecommendations(movies, mood) {
     section.classList.remove("hidden");
     section.scrollIntoView({ behavior: "smooth" });
 }
-<<<<<<< HEAD
 
 
 // Logout
@@ -154,5 +153,3 @@ if (logoutBtn) {
         }
     });
 }
-=======
->>>>>>> d8ce62af25187d863f48487dff97303e00cc1c32
