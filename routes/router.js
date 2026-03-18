@@ -16,6 +16,13 @@ router.post("/logout", mainPageController.logout);
 
 
 // hacer rutas para 
+
+router.get("/login", (req, res) => res.render("login"))
+router.post("/login", LoginController.login);
+
+router.get("/signIn", (req, res) => res.render("signIn"));
+router.post("/signIn", SignInController.signIn);
+
 router.post("/login", LoginController.login);
 router.post("/signIn", SignInController.signIn);
 router.get("/signIn", (req, res) => res.render("signIn"));
