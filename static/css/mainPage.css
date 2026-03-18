@@ -287,18 +287,18 @@ button:hover {
 
 .movie-card .poster {
   width: 100%;
-  aspect-ratio: 2/3;
+  height: 420px;   /* antes se ajustaba solo */
   object-fit: cover;
 }
 
 .movie-card .poster-placeholder {
   width: 100%;
-  aspect-ratio: 2/3;
+  height: 420px;
   background: linear-gradient(135deg, #2a1a8f 0%, #180575 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .movie-card .card-body {
