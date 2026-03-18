@@ -67,6 +67,28 @@ moodForm.addEventListener("submit", async (e) => {
     renderRecommendations(data.movies, mood);
 });
 
+const moviePosters = {
+    "La La Land":               "/img/IMG_PELIS/Lalaland.jpg",
+    "El Rey León":              "/img/IMG_PELIS/El_Rey_Leon.jpg",
+    "Mad Max: Fury Road":       "/img/IMG_PELIS/Mad_Max.jpg",
+    "Eterno Resplandor de una Mente sin Recuerdos": "/img/IMG_PELIS/Eterno_Resplandor_de_una_mente_sin_recuerdos.jpg",
+    "Forrest Gump":             "/img/IMG_PELIS/Forrest_Gump_.jpg",
+    "Joker":                    "/img/IMG_PELIS/Joker.jpg",
+    "Interstellar":             "/img/IMG_PELIS/Interstellar.jpg",
+    "Coco":                     "/img/IMG_PELIS/Coco.jpg",
+    "Titanic":                  "/img/IMG_PELIS/Titanic.jpg",
+    "El Gran Lebowski":         "/img/IMG_PELIS/El_Gran_Lebowski.jpg",
+    "John Wick":                "/img/IMG_PELIS/John_Wick.jpg",
+    "La Lista de Schindler":    "/img/IMG_PELIS/La_Lista_de_Schindler.jpg",
+    "Mamma Mia":                "/img/IMG_PELIS/Mamma_Mia.jpg",
+    "Inception":                "/img/IMG_PELIS/Inception.jpg",
+    "Amélie":                   "/img/IMG_PELIS/Amelie.jpg",
+    "Her":                      "/img/IMG_PELIS/Her.jpg",
+    "The Revenant":             "/img/IMG_PELIS/The_Revenant.jpg",
+    "Chef":                     "/img/IMG_PELIS/Chef.jpg",
+    "Lost in Translation":      "/img/IMG_PELIS/Lost_in_Translation.jpg",
+    "La Sociedad de los Poetas Muertos": "/img/IMG_PELIS/La_Sociedad_de_los_Poetas_Muertos.jpg",
+};
 
 function renderRecommendations(movies, mood) {
     const section = document.getElementById("recommendations");
@@ -83,8 +105,13 @@ function renderRecommendations(movies, mood) {
             const card = document.createElement("article");
             card.classList.add("movie-card");
 
+            const posterSrc = moviePosters[movie.title];
+            const posterHTML = posterSrc
+                ? `<img src="${posterSrc}" alt="${movie.title}" class="poster" />`
+                : `<div class="poster-placeholder">🎬</div>`;
+
             card.innerHTML = `
-                <div class="poster-placeholder">🎬</div>
+                ${posterHTML}
                 <div class="card-body">
                     <div class="card-title">${movie.title}</div>
                     <span class="card-genre">${mood}</span>
