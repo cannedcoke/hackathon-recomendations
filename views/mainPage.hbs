@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodVie – Your Recommendations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/mainPage.css" />
+</head>
+<body>
+
+  <!-- ── Greeting ── -->
+<div class="greeting">
+  <a id="logoutBtn" class="logout-btn">Cerrar sesión ↪</a>
+  <div class="app-name">Mood<span>Vie</span></div>
+  <p class="welcome">
+    Bienvenid@, <span class="username">{{user.name}}</span> — ¿qué querés ver hoy?
+  </p>
+</div>
+
+  <!-- ── Mood selector card ── -->
+  <main>
+    <h2>¿Cómo te sentís?</h2>
+
+    <form id="moodForm" action="/recommendations" method="POST">
+
+      <!-- User ID injected by controller after login -->
+      <input type="hidden" name="userId" value="{{user.id}}" />
+
+      <label>Seleccioná tu estado de ánimo</label>
+
+<div class="mood-grid">
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-feliz" value="feliz" />
+    <label for="mood-feliz">
+      <img src="/img/memojis/faliz.png" alt="Feliz" class="mood-img"/>Feliz
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-triste" value="triste" />
+    <label for="mood-triste">
+      <img src="/img/memojis/triste.png" alt="Triste" class="mood-img"/>Triste
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-romantico" value="romantico" />
+    <label for="mood-romantico">
+      <img src="/img/memojis/romantico.png" alt="Romántico" class="mood-img"/>Romántico
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-accion" value="accion" />
+    <label for="mood-accion">
+      <img src="/img/memojis/enojado.png" alt="Enojado" class="mood-img"/>Enojado
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-relajado" value="relajado" />
+    <label for="mood-relajado">
+      <img src="/img/memojis/relajado.png" alt="Relajado" class="mood-img"/>Relajado
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-intrigado" value="intrigado" />
+    <label for="mood-intrigado">
+      <img src="/img/memojis/intrigado.png" alt="Intrigado" class="mood-img"/>Intrigado
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-nostalgico" value="nostalgico" />
+    <label for="mood-nostalgico">
+      <img src="/img/memojis/nostalgico.png" alt="Nostálgico" class="mood-img"/>Nostálgico
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-inspirado" value="inspirado" />
+    <label for="mood-inspirado">
+      <img src="/img/memojis/inspirado.png" alt="Inspirado" class="mood-img"/>Inspirado
+    </label>
+  </div>
+
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-aburrido" value="aburrido" />
+    <label for="mood-aburrido">
+      <img src="/img/memojis/aburrido.png" alt="Aburrido" class="mood-img"/>Aburrido
+    </label>
+  </div>
+
+</div><!-- /.mood-grid -->
+
+      <button type="submit">Ver recomendaciones 🎬</button>
+
+    </form>
+  </main>
+
+  <!-- ── Recommendations ──
+    The controller renders this section only when `movies` is populated.
+    When there are no movies yet, the `hidden` class keeps it invisible.
+    Example controller (Express + hbs):
+      res.render('mainPage', { user, selectedMood, movies });
+  -->
+  <section id="recommendations" {{#unless movies}}class="hidden"{{/unless}}>
+
+    <h3 class="rec-title">
+      Películas para cuando estás <span>{{selectedMood}}</span>
+    </h3>
+
+    <div class="cards-grid">
+      {{#each movies}}
+      <article class="movie-card">
+
+        <div class="poster-placeholder">🎬</div>
+
+        <div class="card-body">
+          <div class="card-title">{{this.title}}</div>
+          <span class="card-genre">{{../selectedMood}}</span>
+          {{#if this.description}}
+            <p class="card-desc">{{this.description}}</p>
+          {{/if}}
+        </div>
+
+      </article>
+      {{/each}}
+    </div>
+
+  </section>
+<script>
+  const colors = ['#f5c800','#7b9fff','#e8568a','#8b5cf6','#ffffff'];
+  for (let i = 0; i < 80; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*6+4}s;
+      animation-delay:${Math.random()*2}s;
+    `;
+    document.body.appendChild(p);
+  }
+</script>
+  <script src="/js/mainPage.js"></script>
+</body>
+</html>
