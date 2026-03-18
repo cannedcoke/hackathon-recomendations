@@ -126,3 +126,33 @@ function renderRecommendations(movies, mood) {
     section.classList.remove("hidden");
     section.scrollIntoView({ behavior: "smooth" });
 }
+<<<<<<< HEAD
+
+
+// Logout
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+        try {
+            const response = await fetch("/logout", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.redirected) {
+                window.location.href = response.url;
+                return;
+            }
+
+            window.location.href = "/login";
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+            alert("No se pudo cerrar sesión.");
+        }
+    });
+}
+=======
+>>>>>>> d8ce62af25187d863f48487dff97303e00cc1c32
