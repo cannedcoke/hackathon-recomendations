@@ -1,63 +1,38 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
 
-  <body>
+<body>
 
-      <div class="navbar">
-        <div class="app-name">Mood<span>Vie</span></div>
+  <nav>
+  
+  </nav>
 
-      </div>
-    <main>
-        <h2>Login</h2>
-      <form id="loginForm">
+  <main>
+    <h2>INICIO DE SESIÓN</h2>
+    
+    <form id="loginForm">
 
-        <label>Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
-          required
-        />
+      <label>Correo Electrónico</label>
+      <input type="correo" id="correo" placeholder="Ingrese su Correo" required>
+      
+      <label>Contraseña</label>
+      <input type="contraseña" id="contraseña" placeholder="Ingrese su Contraseña" required>
 
-        <label>Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          required
-        />
 
-        <button type="submit">Submit</button>
 
-        <p class="signup-text">
-          ¿No tienes cuenta?
-          <a href="/signIn">Crear cuenta</a>
-        </p>
+      <button type="Enviar">Enviar</button>
 
-      </form>
+      <p Class="signup-text">
+      ¿No tienes cuenta? <a href="/signin">Crear cuenta</a>
+      </p>
 
-    </main>
-    <script>
-  const colors = ['#f5c800','#7b9fff','#e8568a','#8b5cf6','#ffffff'];
-  for (let i = 0; i < 80; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 3 + 1;
-    p.style.cssText = `
-      width:${size}px; height:${size}px;
-      left:${Math.random()*100}%;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      animation-duration:${Math.random()*6+4}s;
-      animation-delay:${Math.random()*2}s;
-    `;
-    document.body.appendChild(p);
-  }
-</script>
-    <script src="/js/index.js"></script>
-  </body>
+    </form>
+    
+  </main>
+</body>
 </html>
