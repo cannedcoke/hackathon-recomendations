@@ -190,3 +190,38 @@ button:hover{
   color:#ffffff;
   border-bottom: 1px solid #ffffff;
 }
+/* ── added: mobile responsive ── */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    align-items: center;
+  }
+
+  .navbar { padding: 14px 16px; }
+
+  main {
+    width: 88vw;
+    padding: 36px 28px;
+    margin-top: 60px;
+  }
+
+  h2 { font-size: 28px; }
+
+  label { font-size: 17px; }
+
+  input {
+    padding: 14px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    margin-top: 24px;
+  }
+
+  .signup-text { font-size: 15px; }
+}

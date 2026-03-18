@@ -12,7 +12,7 @@ const moodToGenres = {
   feliz:      ['Comedia', 'Aventura'],
   triste:     ['Drama'],
   romantico:  ['Romance', 'Drama'],
-  accion:     ['Acción', 'Thriller'],
+  enojado:     ['Acción', 'Thriller'],
   relajado:   ['Comedia'],
   intrigado:  ['Misterio', 'Ciencia ficción'],
   nostalgico: ['Drama', 'Romance'],

@@ -4,7 +4,7 @@ const moodColors = {
     feliz:      { bg: "#f5c800", glow: "rgba(245, 200, 0, 0.3)" },
     triste:     { bg: "#4a90d9", glow: "rgba(74, 144, 217, 0.3)" },
     romantico:  { bg: "#e8568a", glow: "rgba(232, 86, 138, 0.3)" },
-    accion:     { bg: "#e84c1a", glow: "rgba(232, 76, 26, 0.3)" },
+    enojado:     { bg: "#e84c1a", glow: "rgba(232, 76, 26, 0.3)" },
     relajado:   { bg: "#52c46a", glow: "rgba(82, 196, 106, 0.3)" },
     intrigado:  { bg: "#8b5cf6", glow: "rgba(139, 92, 246, 0.3)" },
     nostalgico: { bg: "#f97316", glow: "rgba(249, 115, 22, 0.3)" },
