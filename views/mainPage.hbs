@@ -10,12 +10,13 @@
 <body>
 
   <!-- ── Greeting ── -->
-  <div class="greeting">
-    <div class="app-name">Mood<span>Vie</span></div>
-    <p class="welcome">
-      Bienvenid@, <span class="username">{{user.name}}</span> — ¿qué querés ver hoy?
-    </p>
-  </div>
+<div class="greeting">
+  <a id="logoutBtn" class="logout-btn">Cerrar sesión ↪</a>
+  <div class="app-name">Mood<span>Vie</span></div>
+  <p class="welcome">
+    Bienvenid@, <span class="username">{{user.name}}</span> — ¿qué querés ver hoy?
+  </p>
+</div>
 
   <!-- ── Mood selector card ── -->
   <main>
@@ -28,72 +29,72 @@
 
       <label>Seleccioná tu estado de ánimo</label>
 
-      <div class="mood-grid">
+<div class="mood-grid">
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-feliz" value="feliz" />
-          <label for="mood-feliz">
-            <span class="emoji">😄</span>Feliz
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-feliz" value="feliz" />
+    <label for="mood-feliz">
+      <img src="/img/memojis/faliz.png" alt="Feliz" class="mood-img"/>Feliz
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-triste" value="triste" />
-          <label for="mood-triste">
-            <span class="emoji">😢</span>Triste
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-triste" value="triste" />
+    <label for="mood-triste">
+      <img src="/img/memojis/triste.png" alt="Triste" class="mood-img"/>Triste
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-romantico" value="romantico" />
-          <label for="mood-romantico">
-            <span class="emoji">🥰</span>Romántico
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-romantico" value="romantico" />
+    <label for="mood-romantico">
+      <img src="/img/memojis/romantico.png" alt="Romántico" class="mood-img"/>Romántico
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-accion" value="accion" />
-          <label for="mood-accion">
-            <span class="emoji">💥</span>Enojado
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-accion" value="accion" />
+    <label for="mood-accion">
+      <img src="/img/memojis/enojado.png" alt="Enojado" class="mood-img"/>Enojado
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-relajado" value="relajado" />
-          <label for="mood-relajado">
-            <span class="emoji">😌</span>Relajado
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-relajado" value="relajado" />
+    <label for="mood-relajado">
+      <img src="/img/memojis/relajado.png" alt="Relajado" class="mood-img"/>Relajado
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-intrigado" value="intrigado" />
-          <label for="mood-intrigado">
-            <span class="emoji">🤔</span>Intrigado
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-intrigado" value="intrigado" />
+    <label for="mood-intrigado">
+      <img src="/img/memojis/intrigado.png" alt="Intrigado" class="mood-img"/>Intrigado
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-nostalgico" value="nostalgico" />
-          <label for="mood-nostalgico">
-            <span class="emoji">🌅</span>Nostálgico
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-nostalgico" value="nostalgico" />
+    <label for="mood-nostalgico">
+      <img src="/img/memojis/nostalgico.png" alt="Nostálgico" class="mood-img"/>Nostálgico
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-inspirado" value="inspirado" />
-          <label for="mood-inspirado">
-            <span class="emoji">✨</span>Inspirado
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-inspirado" value="inspirado" />
+    <label for="mood-inspirado">
+      <img src="/img/memojis/inspirado.png" alt="Inspirado" class="mood-img"/>Inspirado
+    </label>
+  </div>
 
-        <div class="mood-option">
-          <input type="radio" name="mood" id="mood-aburrido" value="aburrido" />
-          <label for="mood-aburrido">
-            <span class="emoji">😑</span>Aburrido
-          </label>
-        </div>
+  <div class="mood-option">
+    <input type="radio" name="mood" id="mood-aburrido" value="aburrido" />
+    <label for="mood-aburrido">
+      <img src="/img/memojis/aburrido.png" alt="Aburrido" class="mood-img"/>Aburrido
+    </label>
+  </div>
 
-      </div><!-- /.mood-grid -->
+</div><!-- /.mood-grid -->
 
       <button type="submit">Ver recomendaciones 🎬</button>
 

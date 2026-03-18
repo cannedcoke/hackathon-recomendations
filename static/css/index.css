@@ -11,7 +11,7 @@ body{
 
 
 
-/ hover botón */
+
 button:hover{
   background:#3355ffc3;
   transform:scale(1.05)

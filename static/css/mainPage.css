@@ -43,7 +43,33 @@ body {
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
 }
+/* ── Logout button ── */
+.greeting {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+}
 
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.2s, transform 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
 .greeting .app-name {
   font-family: 'Syne', sans-serif;
   font-size: 6.2rem;
@@ -127,7 +153,13 @@ input[type="password"]:focus {
   animation: drift linear infinite;
   opacity: 0;
 }
-
+.mood-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
 @keyframes drift {
   0%   { transform: translateY(100vh) rotate(0deg);   opacity: 0; }
   10%  { opacity: 1; }
